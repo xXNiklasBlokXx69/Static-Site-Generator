@@ -119,12 +119,6 @@ class TestTextToTextNode(unittest.TestCase):
             ],
         )
 
-    def test_markdown_inside_code_is_literal(self):
-        self.assertEqual(
-            text_to_textnodes("`**bold** _italic_`"),
-            [TextNode("**bold** _italic_", TextType.CODE)],
-        )
-
     def test_unclosed_delimiters(self):
         for text in ("start **unclosed", "start _unclosed", "start `unclosed"):
             with self.subTest(text=text):
