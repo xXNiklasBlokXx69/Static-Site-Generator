@@ -31,8 +31,8 @@ def copy_directory(source, destination):
             copy_directory(source_path, destination_path)
 
 def from_static_to_public():
-    source = "static"
-    destination = "public"
+    source = dir_path_static
+    destination = dir_path_public
 
     # Delete public if it already exists
     if os.path.exists(destination):
